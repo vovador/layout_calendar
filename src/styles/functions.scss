@@ -1,0 +1,26 @@
+$days: ("mon" : 0,"tue": 1,"wed" : 2,"thu" : 3,"fri" : 4,"sat" : 5,"sun": 6 );
+
+@each $day, $num in $days {
+  .calendar-#{$day} div:first-child {
+    margin-left: ($cell-side+$cell-gap)*$num;
+  }
+}
+//create styles for every day as the begging of the month
+
+@for $a from 28 through 31 {
+  .calendar-#{$a} {
+    @for $i from 1 through $a {
+      div:nth-child(#{$i}) {
+        @include cell-default;
+        &::before {
+          content: "#{$i}";
+          @include center-cell-number;
+        }
+        &:hover {
+          @include cell-on-hover;
+        }
+      }
+    }
+  }
+}
+//create styles for deploying days for every possible number of days in a month

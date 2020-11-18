@@ -1,0 +1,34 @@
+@mixin number-font($font,$size) {
+  font-family: $font;
+  font-size: $size;
+}
+
+@mixin cell-size($side) {
+  width: $side;
+  height: $side;
+}
+
+@mixin cell-default {
+  position: relative;
+  width: $cell-side;
+  @include cell-size($cell-side);
+  margin-right: $cell-gap ;
+  background-color: $cell-color;
+  border: 1px solid black;
+  @include number-font("Arial, Helvetica, sans-serif", 30px );
+  cursor: pointer;
+  transition: transform 0.5s, background-color 0.5s;
+
+}
+
+@mixin center-cell-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin cell-on-hover {
+  transform: translate(0,-20px);
+  background-color: $hover-cell-color;
+}

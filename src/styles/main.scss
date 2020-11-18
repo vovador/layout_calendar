@@ -1,3 +1,10 @@
-body {
-  margin: 0;
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "functions";
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 707px;
 }
