@@ -15,7 +15,7 @@
   margin-right: $cell-gap ;
   background-color: $cell-color;
   border: 1px solid black;
-  @include number-font("Arial, Helvetica, sans-serif", 30px );
+  @include number-font(#{Arial, Helvetica, sans-serif}, 30px);
   cursor: pointer;
   transition: transform 0.5s, background-color 0.5s;
 
